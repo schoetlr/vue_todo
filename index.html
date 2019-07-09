@@ -9,8 +9,21 @@
 
 
   <body>
-    <div id="app">
-      {{ message }}
+    <div id="app" class="main">
+      <form>
+        <label>Todo Body</label>
+        <textarea name="todo-body" rows="10" cols="30"></textarea>
+
+      </form>
+      
+      <h1>Todos</h1>
+      <ul>
+        <todo-item
+          v-for="todo in todos"
+          v-bind:todo="todo"
+          v-bind:key="todo.id"
+        ></todo-item>
+      </ul>
     </div>
 
 
