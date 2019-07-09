@@ -10,10 +10,10 @@
 
   <body>
     <div id="app" class="main">
-      <form>
+      <form v-on:submit.prevent="onSubmit">
         <label>Todo Body</label>
-        <textarea name="todo-body" rows="10" cols="30"></textarea>
-
+        <textarea v-model="newTodo" name="todo-body" rows="10" cols="30"></textarea>
+        <button @click="addTodo">Create Todo</button>
       </form>
       
       <h1>Todos</h1>

@@ -1,12 +1,29 @@
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue!',
+    newTodo: '',
     todos: [
       { id: 0, text: 'Clean Kitchen' },
       { id: 1, text: 'Mow grass' },
       { id: 2, text: 'Read book' }
     ]
+  },
+
+  methods: {
+    lastTodoId: function(){
+      var id = this.todos.slice(-1)[0].id;
+      return id;
+    },
+
+    addTodo: function(){
+      var todo = {id: this.lastTodoId() + 1, text: this.newTodo};
+      this.todos.push(todo);
+      this.newTodo = "";
+    },
+
+    onSubmit: function(){
+      console.log("submitted");
+    }
   }
 });
 
