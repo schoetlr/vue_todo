@@ -23,6 +23,11 @@ var app = new Vue({
 
     onSubmit: function(){
       console.log("submitted");
+    },
+
+    markComplete: function($event){
+      
+      $($event.target).css("text-decoration", "line-through");
     }
   }
 });
